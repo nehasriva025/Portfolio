@@ -1,0 +1,27 @@
+.section{
+    background-color: black;
+    height: 100vh;
+    color: white;
+    width: inherit; 
+    display: flex;
+    padding-left: 20vw; 
+    padding-right: 20vw;    
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.section-title h1 {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.title-line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: white;
+}

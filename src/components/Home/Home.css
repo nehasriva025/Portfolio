@@ -1,0 +1,23 @@
+.intro-name {
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  z-index: 10;
+
+}
+
+.intro-role {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  z-index: 10;
+}
