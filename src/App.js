@@ -9,7 +9,7 @@ function App() {
     <div className="App">
        {/* <NavBar></NavBar> */}
       <div id="content">
-        {/* <Home></Home> */}
+        <Home></Home>
         <About></About>
         <Projects></Projects>
       </div>
