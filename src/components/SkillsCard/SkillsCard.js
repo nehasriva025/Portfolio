@@ -1,41 +1,51 @@
-import {useRef } from "react";
+import { useRef } from "react";
 import './SkillsCard.css';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 
-const SkillsCard = ({ skill, icon, className = '', spotlightColor = 'rgba(255, 255, 255, 0.25)' }) => {
-
+const SkillsCard = ({ skill, icon, className = '', spotlightColor = 'rgba(168, 85, 247, 0.8)' }) => {
     const cardRef = useRef(null);
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+    
+    const x = useTransform(mouseX, (value) => `${value}px`);
+    const y = useTransform(mouseY, (value) => `${value}px`);
+
     const handleMouseMove = (e) => {
-
-        // const card = e.currentTarget;
         const rect = cardRef.current.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+        const posX = e.clientX - rect.left;
+        const posY = e.clientY - rect.top;
 
-        cardRef.current.style.setProperty('--mouse-x', `${x}px`);
-        cardRef.current.style.setProperty('--mouse-y', `${y}px`);
-        cardRef.current.style.setProperty('--spotlight-color', spotlightColor);
-
+        mouseX.set(posX);
+        mouseY.set(posY);
     };
 
     const handleMouseLeave = () => {
-        cardRef.current.style.setProperty('--mouse-x', `-100%`);
-        cardRef.current.style.setProperty('--mouse-y', `-100%`);
+        mouseX.set(0);
+        mouseY.set(0);
     };
 
     return (
-        <div
+        // <div className="skills-card">
+        <motion.div
             ref={cardRef}   
             className={`skills-card ${className}`}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            style={{
+                '--mouse-x': x,
+                '--mouse-y': y,
+                '--spotlight-color': spotlightColor
+            }}
         >   
+                    <div className="skills-card-glow"></div>
 
             <div className="skills-card-content">
                 {icon && <div className="skills-card-icon">{icon}</div>}
                 <div className="skills-card-skill">{skill}</div>
             </div>
-
-        </div>
+         </motion.div> 
+        // </div>
     );
 }   
+
 export default SkillsCard;
