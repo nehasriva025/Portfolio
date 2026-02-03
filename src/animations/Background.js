@@ -88,6 +88,8 @@ export default function DarkVeil({
     const canvas = ref.current;
     const parent = canvas.parentElement;
 
+    if (!canvas || !parent) return;
+
     const renderer = new Renderer({
       dpr: Math.min(window.devicePixelRatio, 2),
       canvas
@@ -112,12 +114,32 @@ export default function DarkVeil({
 
     const mesh = new Mesh(gl, { geometry, program });
 
+    let resizeFrame = 0;
     const resize = () => {
-      const w = parent.clientWidth,
-        h = parent.clientHeight;
+      const w = parent.clientWidth;
+      const h = parent.clientHeight;
+
+      if (!w || !h) {
+        resizeFrame = requestAnimationFrame(resize);
+        return;
+      }
+
       renderer.setSize(w * resolutionScale, h * resolutionScale);
       program.uniforms.uResolution.value.set(w, h);
     };
+
+    const handleContextLost = (e) => {
+      e.preventDefault();
+      cancelAnimationFrame(frame);
+    };
+
+    const handleContextRestored = () => {
+      resize();
+      loop();
+    };
+
+    canvas.addEventListener('webglcontextlost', handleContextLost, false);
+    canvas.addEventListener('webglcontextrestored', handleContextRestored, false);
 
     window.addEventListener('resize', resize);
     resize();
@@ -140,6 +162,9 @@ export default function DarkVeil({
 
     return () => {
       cancelAnimationFrame(frame);
+      if (resizeFrame) cancelAnimationFrame(resizeFrame);
+      canvas.removeEventListener('webglcontextlost', handleContextLost);
+      canvas.removeEventListener('webglcontextrestored', handleContextRestored);
       window.removeEventListener('resize', resize);
     };
   }, [hueShift, noiseIntensity, scanlineIntensity, speed, scanlineFrequency, warpAmount, resolutionScale]);
