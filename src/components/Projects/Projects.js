@@ -1,6 +1,6 @@
 import React from 'react';
 import './Projects.css';
-import HighlightedCard from "../HighlightedCard/HighlightedCard" ;
+import HighlightCard from "../HighlightCard/HighlightCard" ;
 import ProjectCard from '../ProjectCard/ProjectCard';
 import FadeIn from '../../animations/FadeIn';
 import { desc } from 'motion/react-client';
@@ -106,7 +106,7 @@ export default function Projects() {
               <h1>Coming Soon...</h1>
               <div className="latest-project-card">
                 
-              <HighlightedCard 
+              <HighlightCard 
                     enableSpotlight
                     enableBorderGlow={true}
                     spotlightRadius={400}

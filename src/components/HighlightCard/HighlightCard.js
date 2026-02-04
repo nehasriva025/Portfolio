@@ -1,6 +1,6 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
 import { gsap } from 'gsap';
-import './HighlightedCard.css';
+import './HighlightCard.css';
 
 const DEFAULT_SPOTLIGHT_RADIUS = 500;
 const DEFAULT_GLOW_COLOR = '132, 0, 255';
