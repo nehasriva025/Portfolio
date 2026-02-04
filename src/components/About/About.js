@@ -49,7 +49,7 @@ export default function About() {
               
               <div className="about-body">
               <p className="about-text">I'm a Software Developer from the University of Waterloo and currently based in Toronto. 
-                My current passions are AI/ML and robotics development within the healthcare industry</p>
+                My current interests are AI/ML and robotics development within the healthcare industry. Outside of tech, I have a deep passion for space and art</p>
 
              <h2>Some of the areas I've previously worked in:</h2>
              <div className='areas-container'>

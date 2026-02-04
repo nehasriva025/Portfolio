@@ -3,6 +3,7 @@ import './App.css';
 import Home  from './components/Home/Home';
 import About from './components/About/About';
 import Projects from './components/Projects/Projects';
+import Contact from './components/Contact/Contact';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <div id="content">
         <Home></Home>
         <About></About>
-        {/* <Projects></Projects> */}
+        <Projects></Projects>
+        <Contact></Contact>
       </div>
       
     </div>

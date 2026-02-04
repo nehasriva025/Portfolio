@@ -2,7 +2,7 @@ import { useRef } from "react";
 import './SkillsCard.css';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 
-const SkillsCard = ({ skill, icon, className = '', spotlightColor = 'rgba(168, 85, 247, 0.8)' }) => {
+const SkillsCard = ({ skill, icon, className = '', spotlightColor = 'rgba(168, 85, 247, 0.8)', onClick }) => {
     const cardRef = useRef(null);
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
@@ -20,8 +20,8 @@ const SkillsCard = ({ skill, icon, className = '', spotlightColor = 'rgba(168, 8
     };
 
     const handleMouseLeave = () => {
-        mouseX.set(0);
-        mouseY.set(0);
+        // mouseX.set(0);
+        // mouseY.set(0);
     };
 
     return (
@@ -31,10 +31,12 @@ const SkillsCard = ({ skill, icon, className = '', spotlightColor = 'rgba(168, 8
             className={`skills-card ${className}`}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            onClick={onClick}
             style={{
                 '--mouse-x': x,
                 '--mouse-y': y,
-                '--spotlight-color': spotlightColor
+                '--spotlight-color': spotlightColor,
+                cursor: onClick ? 'pointer' : 'default'
             }}
         >   
                     <div className="skills-card-glow"></div>

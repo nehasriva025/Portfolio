@@ -2,7 +2,7 @@
   position: relative;
   border-radius: 1.5rem;
   border: 1px solid #222;
-  background-color: #111;
+  background-color: #000000;
   padding: .3rem;
   width: 70%;
   align-items: center;
@@ -10,6 +10,7 @@
   --mouse-x: 50%;
   --mouse-y: 50%;
   display: flex;
+  transition: all 0.4s ease;
 }
 
 .skills-card-glow {
@@ -35,8 +36,8 @@
   align-items: center;
   gap: 0.75rem;
   width: 100%;
-  background-color: #111;
-  border-radius: 1rem;
+  background-color: #000000;
+  border-radius: 1.5rem;
   padding: 15px;
   position: relative;
 }
@@ -47,10 +48,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
 .skills-card-skill {
   line-height: 1.7rem;
   display: flex;
   align-items: center;
+  z-index: 1;
 }

@@ -79,18 +79,19 @@ export const FadeContent = ({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Fade IN when sufficiently visible
-        if (entry.intersectionRatio >= 0.3) {
+        // Fade IN when any part enters viewport
+        if (entry.isIntersecting) {
           setVisible(true);
         }
 
-        // Fade OUT when mostly out of view
-        if (entry.intersectionRatio <= 0.2) {
+        // Fade OUT when completely out of view
+        if (!entry.isIntersecting) {
           setVisible(false);
         }
       },
       {
-        threshold: [0, 0.1, 0.3, 1],
+        threshold: 0,
+        rootMargin: '0px 0px -10% 0px'
       }
     );
 
@@ -103,6 +104,7 @@ export const FadeContent = ({
     <div
       ref={ref}
       style={{
+        // display: 'contents',
         opacity: visible ? 1 : initialOpacity,
         filter: blur
           ? visible

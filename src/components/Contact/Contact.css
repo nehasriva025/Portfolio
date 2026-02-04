@@ -1,0 +1,55 @@
+.contact-base-section {
+   /* background-color: rgb(33, 212, 66); */
+    /* height: 100vh; */
+    color: white;
+    width: inherit; 
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    padding-left: 10vw; 
+    padding-right: 10vw;  
+    margin-top: 10vh;
+    padding-bottom: 20vh;
+  
+}
+
+.contact-body {
+    display: flex;
+    flex-direction: column;
+    /* gap: 15vw; */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* background-color: blueviolet; */
+    margin-top: 10px;
+}
+
+
+.links-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+    width: 100%;
+    place-items: center;
+    padding-top: 5vh;
+}
+
+
+.contact-item {
+    cursor: pointer;
+
+
+}
+.contact-item:hover {
+    transform: translateY(-10%);
+    transition: transform 0.6s ease;
+}
+
+.contact-item::after {
+        transform: translateY(10%);
+
+        transition: transform 0.6s ease;
+
+
+}
