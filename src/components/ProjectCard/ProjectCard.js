@@ -118,11 +118,11 @@ export default function ProjectCard({
           <motion.div className="tilted-card-overlay">{overlayContent}</motion.div>
         )} */}
 
-        <div className="tilted-card-content">
+        <motion.div className="tilted-card-content">
           <motion.h1>{projectTitle}</motion.h1>
           <motion.h3>{projectDesc}</motion.h3>
           <motion.p>{projectSkills}</motion.p>
-        </div>
+        </motion.div>
       </motion.div>
     </figure>
   );

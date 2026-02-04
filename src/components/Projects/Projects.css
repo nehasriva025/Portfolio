@@ -8,7 +8,7 @@
     background-color: black;
     padding-left: 10vw; 
     padding-right: 10vw;  
-    /* margin-top: 10vh; */
+    margin-top: 150px;
   
 }
 
@@ -24,7 +24,7 @@
 
 
 h1{
-    font-size: 2.5rem;
+    /* font-size: 2.5rem; */
 }
 
 .section-title {
@@ -49,6 +49,7 @@ h1{
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* grid-auto-rows: 1fr; */
     gap: 20px;
     margin-top: 40px;
     width: 100%;
@@ -63,13 +64,14 @@ h1{
     gap: 1rem;
     width: 100%;
     align-items: center;
-    justify-content: center;        
+    justify-content: center;   
+    margin-top: 60px;     
 }
 
 .latest-project h1 {
-    font-size: 3rem;
+    /* font-size: 3rem; */
     font-family: 'Fredoka',sans-serif;
-    margin-top: 10vh;
+    /* margin-top: 30px; */
     
 }
 

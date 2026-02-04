@@ -103,7 +103,7 @@ export default function Projects() {
 
             <FadeIn blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
             <div className="latest-project">
-              <h1>Coming Soon...</h1>
+              <h2>Coming Soon...</h2 >
               <div className="latest-project-card">
                 
               <HighlightCard 
