@@ -3,14 +3,19 @@ import './Projects.css';
 import HighlightCard from "../HighlightCard/HighlightCard" ;
 import ProjectCard from '../ProjectCard/ProjectCard';
 import FadeIn from '../../animations/FadeIn';
+import ProjectCarousel from '../ProjectCarousel/ProjectCarousel';
 import { desc } from 'motion/react-client';
-import  { BsTv, BsFillLungsFill  } from "react-icons/bs";
+import  { BsTv, BsFillLungsFill, BsDiscord   } from "react-icons/bs";
 import { FaCar } from "react-icons/fa";
 import { IoMdAnalytics } from "react-icons/io";
 import { RiRobot3Fill } from "react-icons/ri";
 import { MdMedication } from "react-icons/md";
 import { PiPathBold } from "react-icons/pi";
 import { GiCarWheel } from "react-icons/gi";
+import NewPC from '../NewPC/NewPC';
+import LatestCard from '../LatestCard/LatestCard';
+import sleep from '../../sleep.png';
+import med from '../../med.jpg';
 
 
 
@@ -18,6 +23,14 @@ import { GiCarWheel } from "react-icons/gi";
 
 
 const projects = [
+  {
+    title: "NHL Analytics Discord Bot",
+    description: "A Discord bot that provides real-time NHL player stats, game updates, and analytics using the NHL API and data processing techniques"
+    ,link: "#",
+    icon: <BsDiscord  />,
+    skills: "Python, PostgreSQL"
+  }, 
+
   {
     title: "Letterboxd‑Style TV Show Review App",
     description: "A full‑stack Letterboxd‑style app where users can rate, review, and track their favorite TV shows",
@@ -73,9 +86,28 @@ const projects = [
 
 ]
 
+const latestProjectData = [
+  {
+    color: '#000000',
+    description: 'A web app for sleep tracking, sleep recommendations, and preventive analytics for heart and sleep health. Developing a hybrid AI model by combining global models and a personalized model finetuned with user logs ',
+    skills: 'Python, MongoDB, React, Bayesian Learning',
+    title: 'AI-Powered Health Tracker',
+    image: sleep
+  },
+  {
+    color: '#000000',
+    title: 'Prescription Scanner and Tracking App',
+    description: 'A mobile app for scanning and tracking prescription medications, providing reminders and dosage information. Developing custom NER model and OCR pipeline to extract and interpret prescription data from user-uploaded photos',
+    skills: 'React Native, PostgreSQL, Python, OpenCV',
+    image: med
+  }
+];
+
 export default function Projects() {
   return (
     <div id="projects" className="base-section">
+
+
         <FadeIn blur={true} duration={800} easing="ease-out" initialOpacity={0}>
            
             
@@ -83,42 +115,37 @@ export default function Projects() {
                <h1>Projects</h1>
                <div className="title-line"></div>
              </div>
-            <div className="projects-section">
 
-             <div className="projects-grid">
-                {projects.map((project, index) => (
-                  // <FadeIn blur={true} duration={900 + index * 100} easing="ease-out" initialOpacity={0} style={{height: '100%', width: '100%'}} key={index}>
-                  <ProjectCard
-                    key={index}
-                    projectTitle={project.title}
-                    projectDesc={project.description}
-                    projectSkills={project.skills}
-                    icon={project.icon }
-                  />
-                  //  </FadeIn>
-                ))}
-
-                
-            </div>
-
-            <FadeIn blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
+              <FadeIn blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
             <div className="latest-project">
-              <h2>Coming Soon...</h2 >
-              <div className="latest-project-card">
+              <h2>My Latest Projects</h2 >
+              <div className="latest-project-section">
+
                 
-              <HighlightCard 
-                    enableSpotlight
-                    enableBorderGlow={true}
-                    spotlightRadius={400}
-                    glowColor="132, 0, 255"
-                    disableAnimations={false}
-/>
+              {latestProjectData.map((project, index) => (
+                <LatestCard
+                  key={index}
+                  title={project.title}
+                  description={project.description}
+                  skills={project.skills}
+                  image={project.image}
+                  />
+              ))}
               </div>
               </div>
               </FadeIn>
-        
 
+              
+            <FadeIn blur={true} duration={2000} easing="ease-out" initialOpacity={0}>
+            <div className="projects-section">
+                <h2>All Projects</h2>
+
+              <ProjectCarousel projects={projects} />
+
+    
             </div>
+
+            </FadeIn>
         </FadeIn>
 
 

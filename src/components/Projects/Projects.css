@@ -19,6 +19,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-top: 60px;
     /* background-color: blueviolet; */
 }
 
@@ -37,6 +38,7 @@ h1{
 .section-title h1 {
     margin: 0;
     white-space: nowrap;
+    font-weight: 500;
 }
 
 .title-line {
@@ -46,17 +48,7 @@ h1{
 }
 
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    /* grid-auto-rows: 1fr; */
-    gap: 20px;
-    margin-top: 40px;
-    width: 100%;
-    place-items: center;
-    /* background-color: azure; */
 
-}
 
 .latest-project {
     display: flex;
@@ -75,25 +67,32 @@ h1{
     
 }
 
-.latest-project-card{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center !important; */
-    align-items: center;
+.latest-project-section{
+    /* display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 40px;
     width: 100%;
-    margin: 0 auto;
-    /* background-color: blanchedalmond; */
+    align-items: center;
+    justify-content: center; */
+    display: flex; 
+    flex-direction: row;
+    width : 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
 }
 
 .latest-project-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 0 auto;
-  /* Set a max-width for the card itself */
-  max-width: 500px; /* Adjust this value to your preferred width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 500px;
+    height: 100%; /* Make each card fill the grid row height */
 }
 
 /* Make sure MagicBento takes up the space properly */

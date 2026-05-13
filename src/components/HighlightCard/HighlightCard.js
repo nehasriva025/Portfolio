@@ -13,7 +13,12 @@ const cardData = [
     skills: 'Python, MongoDB, React, Bayesian Learning',
     title: 'AI-Powered Health Tracker',
   },
-  
+  {
+    color: '#000000',
+    title: 'Prescription Scanner and Tracking App',
+    description: 'A mobile app for scanning and tracking prescription medications, providing reminders and dosage information.',
+    skills: 'React Native, PostgreSQL, JavaScript, Python, Tesseract OCR, OpenCV',
+  }
 ];
 
 

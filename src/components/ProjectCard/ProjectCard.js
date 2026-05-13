@@ -109,6 +109,7 @@ export default function ProjectCard({
 
             width: "100%",
             height: "25%",
+            
           }}
         >
           {icon && <motion.div className="project-card-icon">{icon}</motion.div>}
