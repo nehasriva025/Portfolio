@@ -42,7 +42,7 @@ const projects = [
     title: "Autonomous Go Kart Capstone Project",
     description: "An autonomous collision avoidance system for go karts, providing automatic emergency braking and evasive maneuvering",
     link: "#",
-    skills: "C, Python, STM32, Jatson Nano",
+    skills: "C, Python, STM32, Jetson Nano",
     icon: <FaCar />
   },
   {
